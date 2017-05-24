@@ -12,11 +12,13 @@ public class GreetingServiceImpl implements GreetingService{
 	GreetingRepository greetingRepository;
 	
 	public List<Greeting> getAllGreeting(){
+		
 		return (List<Greeting>) greetingRepository.findAll();
 	}
 
 	@Override
 	public Greeting saveGreeting(Greeting greeting) {
+		
 		return greetingRepository.save(greeting);
 	}
 }
