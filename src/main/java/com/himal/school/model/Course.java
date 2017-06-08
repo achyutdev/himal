@@ -6,11 +6,13 @@ public class Course {
 
 	private Long id;
 	private String name;
+	private String description;
 	private Kakshya kakshya;
 	private List<Teacher> teachers;
-	private List<Assignment> assignment;
 	private List<Exam> exams;
-
+	private List<BookReference> refrences;
+	private List<CourseResource> resources;
+	
 	public Long getId() {
 		return id;
 	}
@@ -43,20 +45,36 @@ public class Course {
 		this.teachers = teachers;
 	}
 
-	public List<Assignment> getAssignment() {
-		return assignment;
-	}
-
-	public void setAssignment(List<Assignment> assignment) {
-		this.assignment = assignment;
-	}
-
 	public List<Exam> getExams() {
 		return exams;
 	}
 
 	public void setExams(List<Exam> exams) {
 		this.exams = exams;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public List<BookReference> getRefrences() {
+		return refrences;
+	}
+
+	public void setRefrences(List<BookReference> refrences) {
+		this.refrences = refrences;
+	}
+
+	public List<CourseResource> getResources() {
+		return resources;
+	}
+
+	public void setResources(List<CourseResource> resources) {
+		this.resources = resources;
 	}
 
 }
