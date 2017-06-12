@@ -1,4 +1,4 @@
-package com.himal.school.model;
+package com.himal.skul.model;
 
 import java.io.Serializable;
 

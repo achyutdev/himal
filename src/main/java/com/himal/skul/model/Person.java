@@ -1,4 +1,4 @@
-package com.himal.school.model;
+package com.himal.skul.model;
 
 import java.util.Date;
 
@@ -22,6 +22,8 @@ public class Person {
 	
 	@Embedded
 	private Address address;
+	
+	@Embedded
 	private Contact contact;
 	
 	@Temporal(TemporalType.DATE)
