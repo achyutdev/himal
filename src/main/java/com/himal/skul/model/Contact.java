@@ -1,5 +1,8 @@
 package com.himal.skul.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Contact {
 	
 	private String homePhone;
