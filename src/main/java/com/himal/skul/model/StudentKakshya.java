@@ -1,11 +1,16 @@
 package com.himal.skul.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
@@ -24,8 +29,10 @@ public class StudentKakshya {
 
 	private String rollNumber;
 
-	// private List<Course> courses;
-	
+	@ManyToMany
+	@JoinTable(joinColumns = @JoinColumn(name = "studentkakshya_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
+	private List<Course> courses;
+
 	@Enumerated(EnumType.STRING)
 	private Section section;
 
@@ -45,13 +52,13 @@ public class StudentKakshya {
 		this.student = student;
 	}
 
-	// public Kakshya getKakshya() {
-	// return kakshya;
-	// }
-	//
-	// public void setKakshya(Kakshya kakshya) {
-	// this.kakshya = kakshya;
-	// }
+	public Kakshya getKakshya() {
+		return kakshya;
+	}
+
+	public void setKakshya(Kakshya kakshya) {
+		this.kakshya = kakshya;
+	}
 
 	public String getRollNumber() {
 		return rollNumber;
@@ -61,13 +68,13 @@ public class StudentKakshya {
 		this.rollNumber = rollNumber;
 	}
 
-	// public List<Course> getCourses() {
-	// return courses;
-	// }
-	//
-	// public void setCourses(List<Course> courses) {
-	// this.courses = courses;
-	// }
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
 
 	public Section getSection() {
 		return section;

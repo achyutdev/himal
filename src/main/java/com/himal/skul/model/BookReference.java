@@ -1,13 +1,25 @@
 package com.himal.skul.model;
 
 import java.util.List;
+import java.util.Set;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class BookReference {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String description;
-	private List<String> authors;
+	
+	@ElementCollection
+	private Set<String> authors;
 
 	public Long getId() {
 		return id;
@@ -33,11 +45,11 @@ public class BookReference {
 		this.description = description;
 	}
 
-	public List<String> getAuthors() {
+	public Set<String> getAuthors() {
 		return authors;
 	}
 
-	public void setAuthors(List<String> authors) {
+	public void setAuthors(Set<String> authors) {
 		this.authors = authors;
 	}
 

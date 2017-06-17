@@ -1,20 +1,23 @@
 package com.himal.skul.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Result {
 
-	private Exam exam;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	
+	@OneToOne
 	private StudentKakshya student;
 	private Double marksObtained;
 	private String remarks;
 	private boolean examAttended;
-
-	public Exam getExam() {
-		return exam;
-	}
-
-	public void setExam(Exam exam) {
-		this.exam = exam;
-	}
 
 	public StudentKakshya getStudent() {
 		return student;
