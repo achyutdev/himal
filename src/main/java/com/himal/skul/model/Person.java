@@ -1,15 +1,35 @@
-package com.himal.school.model;
+package com.himal.skul.model;
 
 import java.util.Date;
 
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
 public class Person {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String firstName;
 	private String middleName;
 	private String lasttName;
+	
+	@Embedded
 	private Address address;
+
+	@Embedded
 	private Contact contact;
+	
+	@Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
 	
 	public Long getId() {

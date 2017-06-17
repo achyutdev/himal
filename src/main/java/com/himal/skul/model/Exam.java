@@ -1,18 +1,36 @@
-package com.himal.school.model;
+package com.himal.skul.model;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Exam {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+	
 	private String name;
 	private String description;
 	private Double fullMarks;
 	private Double passMarks;
 	private Double weightage;
 	private Date dateOfExam;
+	
+	@Enumerated
 	private ExamType examType;
+	
 	private Date deadline;
+	
+	@OneToMany
+	private List<Result> result;
 	
 	public ExamType getExamType() {
 		return examType;
