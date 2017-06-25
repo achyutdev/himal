@@ -18,6 +18,14 @@ public class Result {
 	private Double marksObtained;
 	private String remarks;
 	private boolean examAttended;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public StudentKakshya getStudent() {
 		return student;

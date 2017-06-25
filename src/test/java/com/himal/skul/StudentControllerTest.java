@@ -56,7 +56,7 @@ public class StudentControllerTest {
 	
 	@Test
 	@Ignore
-	public void saveStudent_whenValid() throws Exception{
+	public void addStudent() throws Exception{
 		
 		Student student = new Student();
 		student.setFirstName(STUDENT_NAME);

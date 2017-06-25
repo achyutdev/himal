@@ -19,6 +19,14 @@ import com.himal.skul.model.Student;
 @RunWith(SpringRunner.class)
 public class StudentServiceImplTest {
 	
+	@Autowired
+    private StudentService studentService;
+	
+	@MockBean
+    private StudentRepository studentRepository;
+	
+	private static final  String STUDENT_NAME = "Achyut";
+	
 	@TestConfiguration
     static class EmployeeServiceImplTestContextConfiguration {
   
@@ -27,14 +35,6 @@ public class StudentServiceImplTest {
             return new StudentServiceImpl();
         }
     }
-	
-	@Autowired
-    private StudentService studentService;
-	
-	@MockBean
-    private StudentRepository studentRepository;
-	
-	private static final  String STUDENT_NAME = "Achyut";
 	
 	@Before
 	public void setUpStudents(){
