@@ -5,3 +5,7 @@ sudo: false
 script: mvn clean install
 notifications:
     slack: himalteam:ipNLcHmJKrpSZiBv5UnaoXj7
+services:
+  - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE school;'
